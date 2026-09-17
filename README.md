@@ -19,6 +19,10 @@ import pandas as pd
 ```
 
 `Explanation`:
+* import pandas as pd imports Pandas for reading, filtering, and analyzing the dataset.
+* pd is the shorter alias for Pandas.
+* import matplotlib.pyplot as plt imports Pyplot for creating graphs.
+
 ```python
 import matplotlib.pyplot as plt
 ```
