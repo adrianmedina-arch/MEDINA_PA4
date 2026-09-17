@@ -32,6 +32,10 @@ import matplotlib.pyplot as plt
 ### A. VISAYAS COMMUNICATION DATAFRAME
 
 `Explanation`:
+* pd.read_excel('board2.xlsx') reads the Excel dataset and stores it in original_df.
+* original_df.copy() creates a separate copy named df, keeping the original DataFrame unchanged.
+* A new Average column is created by calculating the mean of Math, Electronics, GEAS, and Communication for each student.
+* .mean(axis=1) calculates the mean across the four subject columns in each row.
 
 `Code`:
 ```python
@@ -40,6 +44,13 @@ df = original_df.copy()
 df['Average'] = df[['Math','Electronics','GEAS','Communication']].mean(axis=1)
 ```
 `Explanation`:
+* .loc[] filters the rows and selects the required columns.
+* The first condition selects students whose Hometown is Visayas.
+* The second condition selects students whose Track is Communication.
+* The & operator requires both conditions to be true.
+* Only Name, Gender, Math, Electronics, and Average are retained.
+* The filtered DataFrame is stored in VisComm.
+* Writing VisComm displays the resulting DataFrame.
 
 
 `Code`:
