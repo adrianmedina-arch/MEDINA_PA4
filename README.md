@@ -78,15 +78,77 @@ mean_hometown = df.groupby("Hometown")["Average"].mean().reset_index()
 
 b. 
 
+`Explanation`:
+
+`Code`:
+```python
+mean_track
+```
+
+`Explanation`:
+
+`Code`:
+```python
+mean_gender
+```
+
+`Explanation`:
+
+`Code`:
+```python
+mean_hometown
+```
+
+c.
+
+`Explanation`:
+
+`Code`:
+```python
+plt.figure(figsize=(15,5))
+
+plt.subplot(1,3,1)
+plt.bar(mean_track['Track'],mean_track['Average'])
+plt.title('Mean Average by Track')
+plt.xlabel('Track')
+plt.ylabel('Mean Average Grade')
+plt.xticks(rotation=30)
+plt.ylim(0,100)
+
+plt.subplot(1,3,2)
+plt.bar(mean_gender['Gender'],mean_gender['Average'])
+plt.title('Mean Average by Gender')
+plt.xlabel('Gender')
+plt.ylabel('Mean Average Grade')
+plt.ylim(0,100)
+
+plt.subplot(1,3,3)
+plt.bar(mean_hometown['Hometown'],mean_hometown['Average'])
+plt.title('Mean Average by Hometown')
+plt.xlabel('Hometown')
+plt.ylabel('Mean Average Grade')
+plt.xticks(rotation=30)
+plt.ylim(0,100)
+
+plt.tight_layout()
+plt.show()
+```
+
+d.
+
+`Explanation`:
+
+```text
+The Communication track has the highest sample mean Average of 67.98 among the track categories.
+
+Male students have the highest sample mean Average of 67.18 among the gender categories.
+
+Students from Luzon have the highest sample mean Average of 68.08 among the hometown categories.
+```
 
 
-
-
-
-
-
-
-
+#### READMe file version
+SEPT 17, 2026 = Initial Output
 
 
 
