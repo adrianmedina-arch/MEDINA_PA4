@@ -41,12 +41,15 @@ df['Average'] = df[['Math','Electronics','GEAS','Communication']].mean(axis=1)
 ```
 `Explanation`:
 
+
 `Code`:
 ```python
 VisComm = df.loc[(df['Hometown'] == 'Visayas') & (df['Track'] == 'Communication'), ['Name', 'Gender', 'Math', 'Electronics', 'Average']]
 VisComm
 ```
 `Explanation`:
+* .shape returns the dimensions of the DataFrame.
+* .shape[0] returns only the number of rows.
 
 `Code`:
 ```python
@@ -56,14 +59,21 @@ VisComm.shape[0]
 ### B. VISAYAS FEMALE DATAFRAME
 
 `Explanation`:
+* df['Hometown'] == 'Visayas' selects students from Visayas.
+* df['Gender'] == 'Female' selects female students.
+* The & operator requires both conditions to be true.
+* Only Name, Track, GEAS, Electronics, and Average are retained.
+* The resulting DataFrame is stored in VisFemale.
 
 `Code`:
 ```python
-VisFemale=df.loc[(df['Hometown'] == 'Visayas') & (df['Gender']=='Female'), ['Name','Track','GEAS','Electronics','Average']]
+VisFemale=df.loc[(df['Hometown'] == 'Visayas') & (df['Gender'] == 'Female'), ['Name','Track','GEAS','Electronics','Average']]
 VisFemale
 ```
 
 `Explanation`:
+* VisFemale['Average']>=60 checks which students have an Average equal to or greater than 60.
+* .loc[] displays only the rows that satisfy the condition.
 
 `Code`:
 ```python
@@ -75,6 +85,11 @@ VisFemale.loc[VisFemale['Average']>=60]
 a.
 
 `Explanation`:
+* .groupby('Track') groups students according to their track.
+* .groupby('Gender') groups students according to their gender.
+* .groupby('Hometown') groups students according to their hometown.
+* ['Average'].mean() calculates the mean Average for every category.
+* .reset_index() converts the grouped category back into a regular column.
 
 `Code`:
 ```python
@@ -86,6 +101,7 @@ mean_hometown = df.groupby("Hometown")["Average"].mean().reset_index()
 b. 
 
 `Explanation`:
+* Writing mean_track displays the mean Average for each track.
 
 `Code`:
 ```python
@@ -93,6 +109,7 @@ mean_track
 ```
 
 `Explanation`:
+* Writing mean_gender displays the mean Average for each gender.
 
 `Code`:
 ```python
@@ -100,6 +117,7 @@ mean_gender
 ```
 
 `Explanation`:
+* Writing mean_hometown displays the mean Average for each hometown.
 
 `Code`:
 ```python
@@ -109,6 +127,17 @@ mean_hometown
 c.
 
 `Explanation`:
+* plt.figure(figsize=(15,5)) creates the figure and sets its size.
+* plt.subplot(1,3,1) places the Track graph in the first position.
+* plt.subplot(1,3,2) places the Gender graph in the second position.
+* plt.subplot(1,3,3) places the Hometown graph in the third position.
+* plt.bar() creates each bar chart using the categories and their mean averages.
+* plt.title() gives each graph a title.
+* plt.xlabel() and plt.ylabel() label the axes.
+* plt.xticks(rotation=30) rotates long category labels for readability.
+* plt.ylim(0,100) gives all three graphs the same scale.
+* plt.tight_layout() prevents the labels and graphs from overlapping.
+* plt.show() displays the completed figure.
 
 `Code`:
 ```python
