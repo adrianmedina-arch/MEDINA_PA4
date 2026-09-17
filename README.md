@@ -10,6 +10,9 @@ At the end of this laboratory activity, the student should be able to:
 4. communicate a data comparison using clear and correctly labeled plots.
 
 `Explanation`:
+* Imports the Pandas library.
+* Pandas is used to read, filter, organize, and analyze tabular data.
+* pd is the shorter name used when calling Pandas functions.
 
 ```python
 import pandas as pd
